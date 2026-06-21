@@ -1,7 +1,4 @@
-node_modules/
+index-v2.html
+index-v3.html
+server.js
 .DS_Store
-Thumbs.db
-*.log
-.vscode/
-.idea/
-.netlify/
