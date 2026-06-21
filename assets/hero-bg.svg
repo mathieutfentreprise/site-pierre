@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Fond — coucher de soleil sur Haïti">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#1a0f08"/>
+      <stop offset=".35" stop-color="#5a1a14"/>
+      <stop offset=".7"  stop-color="#c97a28"/>
+      <stop offset="1"   stop-color="#1a0f08"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="65%" r="55%">
+      <stop offset="0"   stop-color="#f6d28a" stop-opacity=".55"/>
+      <stop offset=".35" stop-color="#e09a35" stop-opacity=".25"/>
+      <stop offset="1"   stop-color="#e09a35" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain3">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 .8  0 0 0 0 .5  0 0 0 0 .2  0 0 0 .06 0"/>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#halo)"/>
+
+  <!-- horizon -->
+  <g opacity=".8">
+    <path d="M0 720 L260 640 520 700 780 600 1040 690 1300 620 1560 700 1920 660 1920 1080 0 1080 Z"
+          fill="#1a0a04"/>
+    <path d="M0 780 L240 730 480 780 760 700 1000 780 1260 710 1500 790 1920 740 1920 1080 0 1080 Z"
+          fill="#0e0602" opacity=".75"/>
+  </g>
+
+  <rect width="1920" height="1080" filter="url(#grain3)" opacity=".4"/>
+
+  <radialGradient id="vig2" cx="50%" cy="50%" r="80%">
+    <stop offset="0"   stop-color="rgba(0,0,0,0)"/>
+    <stop offset="1"   stop-color="rgba(0,0,0,.55)"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#vig2)"/>
+</svg>

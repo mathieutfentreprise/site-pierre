@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="Couverture : 21 histoires — LPJ">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4ead0"/>
+      <stop offset="1" stop-color="#e0cc97"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="rgba(0,0,0,.35)"/>
+      <stop offset=".08" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0"   stop-color="rgba(0,0,0,.20)"/>
+      <stop offset=".06" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 .10  0 0 0 0 .06  0 0 0 0 .02  0 0 0 .12 0"/>
+    </filter>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r=".7" fill="rgba(90,26,20,.35)"/>
+    </pattern>
+  </defs>
+
+  <!-- paper -->
+  <rect x="0" y="0" width="600" height="800" fill="url(#paper)"/>
+  <rect x="0" y="0" width="600" height="800" fill="url(#g)" opacity=".5"/>
+  <rect x="0" y="0" width="600" height="800" filter="url(#grain)" opacity=".55"/>
+
+  <!-- spine + edge shadow -->
+  <rect x="0" y="0" width="40" height="800" fill="url(#spine)"/>
+  <rect x="560" y="0" width="40" height="800" fill="url(#edge)"/>
+
+  <!-- inner frame -->
+  <rect x="48" y="64" width="504" height="672" fill="none"
+        stroke="#5a1a14" stroke-width="1.4" opacity=".7"/>
+  <rect x="56" y="72" width="488" height="656" fill="none"
+        stroke="#5a1a14" stroke-width=".6" opacity=".4"/>
+
+  <!-- header eyebrow -->
+  <g font-family="Inter, sans-serif" fill="#8b3a1f" letter-spacing="6">
+    <text x="300" y="120" font-size="11" text-anchor="middle">— NOUVELLES —</text>
+  </g>
+
+  <!-- big numerals -->
+  <g text-anchor="middle" font-family="Fraunces, Times New Roman, serif" fill="#5a1a14">
+    <text x="300" y="350" font-size="280" font-weight="500"
+          font-style="italic" letter-spacing="-12">21</text>
+  </g>
+
+  <!-- ornamental rule -->
+  <g stroke="#8b3a1f" stroke-width="1" opacity=".7">
+    <line x1="160" y1="400" x2="280" y2="400"/>
+    <line x1="320" y1="400" x2="440" y2="400"/>
+    <circle cx="300" cy="400" r="3.5" fill="#c97a28" stroke="none"/>
+  </g>
+
+  <!-- title -->
+  <g text-anchor="middle" font-family="Fraunces, Times New Roman, serif" fill="#1a0f08">
+    <text x="300" y="470" font-size="56" font-weight="400" letter-spacing="-1.5">histoires</text>
+  </g>
+
+  <!-- subtitle -->
+  <g text-anchor="middle" font-family="Spectral, Georgia, serif" fill="#3a2818">
+    <text x="300" y="528" font-size="17" font-style="italic">
+      <tspan>récits d'une plume engagée</tspan>
+    </text>
+  </g>
+
+  <!-- author -->
+  <g text-anchor="middle" font-family="Inter, sans-serif" fill="#8b3a1f" letter-spacing="8">
+    <text x="300" y="680" font-size="13" font-weight="500">JUNIOR LEFÈVRE PIERRE</text>
+  </g>
+
+  <!-- bottom mark -->
+  <g text-anchor="middle" font-family="Inter, sans-serif" fill="#8b3a1f" opacity=".55" letter-spacing="3">
+    <text x="300" y="710" font-size="9">L · P · J</text>
+  </g>
+
+  <!-- corner stars (haitian flag motif) -->
+  <g fill="#c97a28">
+    <path d="M82 96 l3 6 6 0 -5 4 2 6 -6 -3 -6 3 2 -6 -5 -4 6 0 z" opacity=".75"/>
+    <path d="M512 96 l3 6 6 0 -5 4 2 6 -6 -3 -6 3 2 -6 -5 -4 6 0 z" opacity=".75"/>
+    <path d="M82 704 l3 6 6 0 -5 4 2 6 -6 -3 -6 3 2 -6 -5 -4 6 0 z" opacity=".75"/>
+    <path d="M512 704 l3 6 6 0 -5 4 2 6 -6 -3 -6 3 2 -6 -5 -4 6 0 z" opacity=".75"/>
+  </g>
+</svg>

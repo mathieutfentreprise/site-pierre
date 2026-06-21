@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" role="img" aria-label="Carte stylisée d'Haïti">
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d4a574"/>
+      <stop offset="1" stop-color="#c97a28"/>
+    </linearGradient>
+  </defs>
+  <!-- silhouette extremely stylized — pas une représentation cartographique précise -->
+  <g fill="url(#hg)" stroke="#f4ead0" stroke-width="1.2">
+    <!-- main island -->
+    <path d="M40 130
+             C60 100, 110 90, 160 95
+             L210 100
+             C230 95, 245 110, 248 124
+             L260 122
+             L270 110
+             L300 108
+             L340 116
+             L355 110
+             L385 116
+             L420 130
+             L440 140
+             L435 155
+             L405 162
+             L380 156
+             L355 168
+             L330 162
+             L300 170
+             L268 164
+             L250 174
+             L240 168
+             L220 178
+             L195 172
+             L168 180
+             L140 174
+             L110 178
+             L85 170
+             L60 162
+             L48 150
+             Z"/>
+  </g>
+  <!-- Port-au-Prince marker -->
+  <g>
+    <circle cx="208" cy="148" r="6" fill="#5a1a14"/>
+    <circle cx="208" cy="148" r="11" fill="none" stroke="#5a1a14" stroke-width="1" opacity=".6">
+      <animate attributeName="r" values="11;18;11" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".6;0;.6" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g font-family="Inter, sans-serif" font-size="10" letter-spacing="2" fill="#f4ead0">
+    <text x="208" y="200" text-anchor="middle">PORT-AU-PRINCE</text>
+  </g>
+  <g font-family="Fraunces, serif" font-size="14" letter-spacing="6" fill="#f4ead0" opacity=".9">
+    <text x="240" y="58" text-anchor="middle">HAÏTI</text>
+  </g>
+</svg>
