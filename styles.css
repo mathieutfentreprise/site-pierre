@@ -413,6 +413,12 @@ section {
 }
 .book:hover .book__cover { transform: translateY(-6px); }
 .book__cover svg { width: 100%; height: 100%; }
+.book__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--ink);
+}
 
 .book--featured .book__cover {
   outline: 1px solid rgba(212, 165, 116, .4);
@@ -443,6 +449,34 @@ section {
   color: var(--ink-soft);
   margin-top: 4px;
 }
+.book__buy {
+  align-self: flex-start;
+  margin-top: 10px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--bordeaux);
+  border-radius: 999px;
+  transition: background .25s, color .25s, transform .25s;
+}
+.book__buy::after {
+  content: '↗';
+  font-size: 14px;
+  transition: transform .25s;
+}
+.book__buy:hover {
+  background: var(--bordeaux);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+.book__buy:hover::after { transform: translate(2px, -2px); }
 
 /* =========================================================
    Mission — sticky scrollytelling
@@ -858,6 +892,352 @@ footer .footer__signature {
   letter-spacing: .04em;
   color: var(--or);
   text-align: right;
+}
+
+/* =========================================================
+   Dédicace — livre signé par l'auteur
+   ========================================================= */
+.dedicace {
+  background: var(--paper);
+  border-top: 1px solid rgba(26,15,8,.06);
+  border-bottom: 1px solid rgba(26,15,8,.06);
+}
+.dedicace__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(48px, 8vw, 120px);
+  align-items: start;
+}
+@media (max-width: 900px) { .dedicace__grid { grid-template-columns: 1fr; } }
+
+.dedicace__intro h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(42px, 5.5vw, 84px);
+  line-height: .95;
+  letter-spacing: -.025em;
+  margin: 12px 0 24px;
+}
+.dedicace__intro h2 em {
+  font-style: italic;
+  color: var(--ocre-deep);
+}
+.dedicace__intro p {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+.dedicace__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding-top: 12px;
+}
+.dedicace__steps .step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+  padding-bottom: 26px;
+  border-bottom: 1px solid rgba(26,15,8,.10);
+}
+.dedicace__steps .step:last-child { border-bottom: 0; padding-bottom: 0; }
+.step__num {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 44px;
+  line-height: .9;
+  color: var(--terre);
+  min-width: 46px;
+}
+.step strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: -.01em;
+}
+.step p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 34ch;
+}
+.dedicace__cta {
+  margin-top: clamp(48px, 8vh, 80px);
+  padding-top: 32px;
+  border-top: 1px solid rgba(26,15,8,.10);
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+.dedicace__ps {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 42ch;
+}
+
+/* =========================================================
+   Progression — objectifs & jauges
+   ========================================================= */
+.progression { background: var(--paper-2); }
+.progression h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(44px, 6vw, 92px);
+  line-height: .95;
+  letter-spacing: -.025em;
+  margin: 12px 0 22px;
+  max-width: 14ch;
+}
+.progression h2 em { font-style: italic; color: var(--ocre-deep); }
+.progression__sub {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  margin-bottom: clamp(48px, 8vh, 90px);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 980px) { .metrics { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .metrics { grid-template-columns: 1fr; } }
+
+.metric {
+  background: #fff8e3;
+  border: 1px solid rgba(26, 15, 8, .08);
+  border-radius: 16px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.metric__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--terre);
+}
+.metric__value {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(36px, 4vw, 54px);
+  line-height: 1;
+  letter-spacing: -.025em;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.metric__unit {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: .38em;
+  color: var(--ink-soft);
+  letter-spacing: 0;
+}
+.metric__bar {
+  height: 4px;
+  background: rgba(26,15,8,.10);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.metric__bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--ocre), var(--terre));
+  border-radius: 999px;
+  transition: width 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.metric__now {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.progression__note {
+  margin-top: 32px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-soft);
+  opacity: .8;
+}
+
+/* =========================================================
+   Donateurs — mur de reconnaissance
+   ========================================================= */
+.donateurs { background: var(--paper); }
+.donateurs__head {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: end;
+  margin-bottom: clamp(48px, 8vh, 90px);
+}
+@media (max-width: 880px) { .donateurs__head { grid-template-columns: 1fr; } }
+
+.donateurs h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(44px, 6vw, 88px);
+  line-height: .95;
+  letter-spacing: -.025em;
+  margin-top: 12px;
+}
+.donateurs h2 em { font-style: italic; color: var(--ocre-deep); }
+.donateurs__intro {
+  font-size: 17px;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+
+.donateurs__wall {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 900px) { .donateurs__wall { grid-template-columns: repeat(2, 1fr); } }
+
+.donor {
+  background: #fff8e3;
+  border: 1px solid rgba(26,15,8,.08);
+  border-radius: 14px;
+  padding: 22px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  transition: transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.donor:hover { transform: translateY(-3px); }
+.donor__name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.donor__note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.donor--empty {
+  background: transparent;
+  border-style: dashed;
+  border-color: rgba(139, 58, 31, .35);
+  display: grid;
+  place-items: center;
+  min-height: 130px;
+  transition: background .3s, border-color .3s;
+}
+.donor--empty:hover {
+  background: rgba(139, 58, 31, .05);
+  border-color: var(--terre);
+  transform: none;
+}
+.donor__cta {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--terre);
+  text-align: center;
+}
+.donateurs__foot {
+  margin-top: 36px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(26,15,8,.10);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+
+/* =========================================================
+   Artistes — porte ouverte
+   ========================================================= */
+.artistes {
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+.artistes::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g fill='none' stroke='rgba(212,165,116,.06)' stroke-width='1'><circle cx='100' cy='100' r='40'/><circle cx='100' cy='100' r='70'/><circle cx='100' cy='100' r='95'/></g></svg>");
+  background-size: 420px 420px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  opacity: .55;
+  pointer-events: none;
+}
+.artistes__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 900px) { .artistes__wrap { grid-template-columns: 1fr; } }
+
+.artistes .eyebrow { color: var(--or); }
+.artistes h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(46px, 6.2vw, 96px);
+  line-height: .95;
+  letter-spacing: -.025em;
+  color: var(--paper);
+  margin-top: 12px;
+}
+.artistes h2 em {
+  font-style: italic;
+  color: var(--or);
+}
+.artistes__right p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(244, 234, 208, .85);
+  max-width: 54ch;
+  margin-bottom: 22px;
+}
+.artistes__right p:last-of-type { margin-bottom: 32px; }
+.artistes .disciplines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 6px 0 26px;
+}
+.artistes .disciplines span {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--or);
+  background: rgba(212, 165, 116, .1);
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 165, 116, .25);
 }
 
 /* =========================================================
