@@ -397,6 +397,74 @@ section {
 }
 @media (max-width: 980px) { .book-row { grid-template-columns: 1fr; gap: 56px; } }
 
+/* Corpus — sous-groupe (Tracts / Chodann) */
+.corpus {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(40px, 6vw, 96px);
+  padding-block: clamp(56px, 8vh, 96px);
+  border-top: 1px solid rgba(26, 15, 8, .10);
+  align-items: start;
+}
+.corpus:first-of-type { border-top: 0; padding-top: 0; }
+@media (max-width: 900px) {
+  .corpus { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.corpus__head { padding-top: 6px; }
+.corpus__label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--terre);
+  display: block;
+  margin-bottom: 14px;
+}
+.corpus--featured .corpus__label { color: var(--ocre-deep); }
+
+.corpus__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 144, 'SOFT' 60;
+  font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1;
+  letter-spacing: -.02em;
+  margin-bottom: 18px;
+  max-width: 12ch;
+}
+.corpus--featured .corpus__title { color: var(--bordeaux); }
+.corpus__desc {
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 36ch;
+  line-height: 1.55;
+}
+.corpus__pull {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(139, 58, 31, .25);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.4;
+  color: var(--terre);
+  max-width: 20ch;
+}
+
+.corpus__books {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+@media (max-width: 520px) {
+  .corpus__books { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* Inside corpus, tighten the book card slightly */
+.corpus__books .book__title { font-size: 22px; }
+
 .book {
   display: flex;
   flex-direction: column;
