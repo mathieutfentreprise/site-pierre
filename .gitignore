@@ -2,3 +2,6 @@ index-v2.html
 index-v3.html
 server.js
 .DS_Store
+
+# Local Netlify folder
+.netlify

@@ -537,6 +537,29 @@ section {
   text-transform: uppercase;
   color: var(--ink-soft);
 }
+
+/* Variant: <details> version with expandable full preface */
+details.book__preface summary {
+  cursor: pointer;
+  list-style: none;
+}
+details.book__preface summary::-webkit-details-marker { display: none; }
+details.book__preface .book__preface-tag::after { content: ' — déplier'; }
+details.book__preface[open] .book__preface-tag::after { content: ' — replier'; }
+.book__preface-full {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(139, 58, 31, .15);
+}
+.book__preface-full p {
+  font-family: var(--font-body, inherit);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: .9em;
+}
+.book__preface-full p:last-child { margin-bottom: 0; }
 .book__buy {
   align-self: flex-start;
   margin-top: 10px;
@@ -980,6 +1003,56 @@ footer .footer__signature {
   letter-spacing: .04em;
   color: var(--or);
   text-align: right;
+}
+
+/* =========================================================
+   Préfaces — texte complet des tomes de Chodann
+   ========================================================= */
+.prefaces { background: var(--paper); }
+.prefaces h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 144, 'SOFT' 80;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  color: var(--bordeaux);
+  margin-bottom: 44px;
+}
+.prefaces h2 em {
+  font-style: italic;
+  font-variation-settings: 'opsz' 144, 'SOFT' 100;
+  color: var(--ocre-deep);
+}
+.prefaces__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 4vw, 64px);
+}
+@media (max-width: 880px) { .prefaces__grid { grid-template-columns: 1fr; } }
+
+.preface__label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--terre);
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(139, 58, 31, .2);
+}
+.preface__text p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 1em;
+}
+.preface__sign {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ocre-deep);
 }
 
 /* =========================================================
