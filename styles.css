@@ -517,6 +517,26 @@ section {
   color: var(--ink-soft);
   margin-top: 4px;
 }
+.book__preface {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(139, 58, 31, .2);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--terre);
+}
+.book__preface-tag {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-ui);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
 .book__buy {
   align-self: flex-start;
   margin-top: 10px;

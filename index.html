@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LPJ — Choisir une version</title>
+  <title>PJL — Choisir une version</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     body { min-height: 100vh; display: grid; place-items: center; padding: 60px 24px; }
@@ -33,10 +33,11 @@
     }
     .versions {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 28px;
       text-align: left;
     }
+    @media (max-width: 1040px) { .versions { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 760px) { .versions { grid-template-columns: 1fr; } }
 
     .version {
@@ -107,11 +108,11 @@
 </head>
 <body>
   <main class="chooser">
-    <p class="eyebrow" style="margin-bottom: 16px">LPJ · 22 histoires</p>
-    <h1>Deux <em>versions</em><br>du site.</h1>
+    <p class="eyebrow" style="margin-bottom: 16px">PJL · 22 histoires</p>
+    <h1>Trois <em>versions</em><br>du site.</h1>
     <p class="lead">
-      Deux approches de la même landing scrollytelling : l'une joue
-      l'ambiance, l'autre met la couverture du livre au centre.
+      Trois approches de la même landing scrollytelling : ambiance,
+      couverture au centre, ou ambiance avec le portrait de l'auteur.
       Choisissez celle que vous préférez.
     </p>
 
@@ -134,6 +135,16 @@
         <h3>Le livre au centre.</h3>
         <p>Hero produit. La couverture de <em>22 histoires</em> s'agrandit au scroll, devient l'objet. Plus direct, plus éditorial.</p>
         <span class="cta">Ouvrir la version 3</span>
+      </a>
+
+      <a class="version version--v4" href="index-v4.html">
+        <div class="thumb">
+          <img src="assets/auteur-pierre.jpg" alt="Aperçu portrait v4" style="object-position: 50% 20%">
+        </div>
+        <span class="label">— Version 4 —</span>
+        <h3>Le portrait au centre.</h3>
+        <p>Hero produit. Le portrait de Pierre Junior Lefèvre s'agrandit au scroll, à la place de la couverture ou de l'ambiance.</p>
+        <span class="cta">Ouvrir la version 4</span>
       </a>
     </div>
   </main>

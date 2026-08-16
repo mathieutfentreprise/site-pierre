@@ -1,4 +1,4 @@
-# Site LPJ — 21 histoires
+# Site PJL — 21 histoires
 # Landing scrollytelling éditoriale · projet bibliothèques Haïti
 
 [build]
@@ -23,6 +23,11 @@
 [[redirects]]
   from = "/v3"
   to = "/index-v3.html"
+  status = 200
+
+[[redirects]]
+  from = "/v4"
+  to = "/index-v4.html"
   status = 200
 
 # Headers de sécurité standards
